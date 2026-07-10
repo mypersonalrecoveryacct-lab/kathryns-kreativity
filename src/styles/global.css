@@ -1,0 +1,135 @@
+:root {
+  /* Palette — inspired by a painter's studio at dusk: wet pigment, cast resin, patinated metal */
+  --ink: #1E1826;
+  --ink-soft: #2C2333;
+  --paper: #F3ECE2;
+  --paper-dim: #E9E0D2;
+  --amber: #E2A63B;       /* cast resin — primary accent / CTAs */
+  --lacquer: #A63A4A;     /* wet pigment — paintings accent */
+  --verdigris: #4F8478;   /* patinated metal — jewelry accent */
+  --text-on-ink: #F3ECE2;
+  --text-on-paper: #241C2C;
+  --text-muted: #9C8FA6;
+
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "Work Sans", system-ui, sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --radius: 4px;
+  --max-width: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--text-on-paper);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: var(--ink);
+}
+.btn-primary:hover { transform: translateY(-1px); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+.btn-dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn-dark:hover { transform: translateY(-1px); }
+
+.btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+/* --- Signature: wax-seal category badge --- */
+.seal {
+  --seal-color: var(--amber);
+  width: 46px;
+  height: 46px;
+  border-radius: 50% 48% 52% 47% / 52% 46% 54% 48%;
+  background: var(--seal-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.seal.painting { --seal-color: var(--lacquer); color: var(--paper); }
+.seal.jewelry { --seal-color: var(--verdigris); color: var(--paper); }
+.seal.resin { --seal-color: var(--amber); color: var(--ink); }
+
+/* --- drip divider --- */
+.drip-divider {
+  width: 100%;
+  height: 28px;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
