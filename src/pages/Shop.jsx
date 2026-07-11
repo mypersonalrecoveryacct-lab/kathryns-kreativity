@@ -97,9 +97,31 @@ export default function Shop() {
             <ProductCard key={p.id} product={p} />
           ))}
         </div>
-    </section>
-
-      {/* Meet the maker */}
+    {/* Past work — not for sale, just a look at earlier pieces */}
+      <section className="wrap" style={{ padding: '20px 28px 70px' }}>
+        <span className="eyebrow">A look back</span>
+        <h2 style={{ fontSize: '1.6rem', fontStyle: 'italic', marginTop: 8, marginBottom: 4 }}>
+          A few earlier pieces
+        </h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: 24 }}>
+          Not for sale — just a glimpse of where this all started.
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 20 }}>
+          {[
+            { src: 'https://raw.githubusercontent.com/mypersonalrecoveryacct-lab/kathryns-kreativity/main/necklace.jpg', caption: 'Garnet bead necklace & earring set' },
+            { src: 'https://raw.githubusercontent.com/mypersonalrecoveryacct-lab/kathryns-kreativity/main/umbrella-painting.jpg', caption: 'Umbrella in the rain, acrylic' },
+            { src: 'https://raw.githubusercontent.com/mypersonalrecoveryacct-lab/kathryns-kreativity/main/dandelion-painting.jpg', caption: 'Dandelions, acrylic' },
+            { src: 'https://raw.githubusercontent.com/mypersonalrecoveryacct-lab/kathryns-kreativity/main/mad-hatter-box.jpg', caption: 'Mad Hatter trinket box, mixed media' },
+          ].map((item) => (
+            <div key={item.caption}>
+              <div style={{ aspectRatio: '1/1', borderRadius: 4, overflow: 'hidden', marginBottom: 8 }}>
+                <img src={item.src} alt={item.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <p className="eyebrow" style={{ color: 'var(--text-muted)' }}>{item.caption}</p>
+            </div>
+          ))}
+        </div>
+      </section>
       <section style={{ background: 'var(--ink)', color: 'var(--paper)', padding: '64px 28px', marginBottom: -80 }}>
         <div className="wrap" style={{ maxWidth: 640 }}>
           <blockquote style={{ margin: 0, fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: '1.4rem', lineHeight: 1.4 }}>
