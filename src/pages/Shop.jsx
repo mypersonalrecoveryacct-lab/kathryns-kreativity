@@ -97,6 +97,22 @@ export default function Shop() {
             <ProductCard key={p.id} product={p} />
           ))}
         </div>
+    </section>
+
+      {/* Meet the maker */}
+      <section style={{ background: 'var(--ink)', color: 'var(--paper)', padding: '64px 28px', marginBottom: -80 }}>
+        <div className="wrap" style={{ maxWidth: 640 }}>
+          <blockquote style={{ margin: 0, fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: '1.4rem', lineHeight: 1.4 }}>
+            "And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving thanks to God the Father through him."
+          </blockquote>
+          <span className="eyebrow" style={{ display: 'block', marginTop: 10, color: 'var(--amber)' }}>— Colossians 3:17</span>
+          <p style={{ marginTop: 24, color: '#D9CFE0' }}>
+            Creativity is a gift, not something I earned — and every piece here is my
+            way of giving thanks for it. From hand-strung beadwork to layered paint to
+            one-of-a-kind mixed media, each piece starts as an idea and stays exactly
+            that: one of a kind. Based in Los Angeles County.
+          </p>
+        </div>
       </section>
     </div>
   )
