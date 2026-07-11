@@ -97,6 +97,8 @@ export default function Shop() {
             <ProductCard key={p.id} product={p} />
           ))}
         </div>
+      
+      </section>
     {/* Past work — not for sale, just a look at earlier pieces */}
       <section className="wrap" style={{ padding: '20px 28px 70px' }}>
         <span className="eyebrow">A look back</span>
